@@ -16,6 +16,8 @@ Created using Flask
 
 # Run Flask App
 ```
-export FLASK_APP=app.py
+export FLASK_APP=<app_name>.py
+export FLASK_ENV=development
+export FLASK_DEBUG=1
 flask run
 ```
