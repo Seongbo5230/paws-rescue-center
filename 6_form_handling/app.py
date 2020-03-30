@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 from forms import LoginForm
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'dfewfew123213rwdsgert34tgfd1234trgf'
+app.config['SECRET_KEY'] = '' # make your own secret
 
 users = {
     "archie.andrews@email.com": "football4life",
