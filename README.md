@@ -21,3 +21,11 @@ export FLASK_ENV=development
 export FLASK_DEBUG=1
 flask run
 ```
+
+# Jinja Delimiters
+```
+{% ... %} is used for statements.
+{{ ... }} is used for variables.
+{# ... #} is used for comments.
+# ... ## is used for line statements.
+```

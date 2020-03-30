@@ -1,0 +1,78 @@
+<!--  -->
+<!-- jinja template inheritance -->
+<!--  -->
+
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <link rel="stylesheet" href="{{url_for('static', filename='format.css')}}" />
+   <title>Home Page - Jinja Demo</title>
+ </head>
+ <body>
+   <div id="header"> JINJA DEMO </div>
+   <div id="content"> 
+     <h1>Home Page</h1>
+     <p>Welcome to the Jinja2 Demo.</p>
+   </div>
+   <div id="footer"> Copyright © 2019 All Rights Reserved </div>
+ </body>
+</html>
+
+
+<!--  -->
+<!-- dnyamic template control flow -->
+<!--  -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Jinja2 Demo</title>
+</head>
+<body>  
+   <table style="width:100%; text-align:center">
+    <tr>
+        <th>Username</th>
+        <th>Location</th>
+    </tr>
+    {% for username, location in users.items() %}
+    {% if location == "Los Angeles" %}
+    <tr>
+        <td>{{username}}</td>
+        <td>{{location}}</td>
+    </tr>
+    {% endif %}
+    {% endfor %}
+</table>
+</body>
+</html> -->
+
+
+
+<!--  -->
+<!-- first part.... -->
+<!--  -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Jinja2 Demo</title>
+</head>
+<body>  
+   <table style="width:100%; text-align:center">
+    <tr>
+         <th>Index</th>
+        <th>Username</th>
+        <th>Location</th>
+    </tr>
+    {% for username, location in users.items() %}
+    <tr>
+        <td>{{loop.index}}</td>
+        <td>{{username}}</td>
+        <td>{{location}}</td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html> -->
