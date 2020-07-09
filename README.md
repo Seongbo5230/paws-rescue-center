@@ -29,5 +29,3 @@ flask run
 {# ... #} is used for comments.
 # ... ## is used for line statements.
 ```
-
-
