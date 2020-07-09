@@ -1,6 +1,6 @@
 """Flask Application for Paws Rescue Center."""
 from flask import Flask, render_template, abort
-# from forms import SignUpForm
+from forms import SignUpForm
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'dfewfew123213rwdsgert34tgfd1234trgf'
@@ -34,11 +34,11 @@ def pet_details(pet_id):
         abort(404, description="No Pet was Found with the given ID")
     return render_template("details.html", pet = pet)
 
-# @app.route("/signup", methods=["POST", "GET"])
-# def signup():
-#     """View function for showing details of each pet..."""
-#     form = SignUpForm()
-#     return render_template("signup.html", form = form)
+@app.route("/signup", methods=["POST", "GET"])
+def signup():
+    """View function for showing details of each pet..."""
+    form = SignUpForm()
+    return render_template("signup.html", form = form)
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=3000)
