@@ -2,7 +2,7 @@
 
 echo "Setting env for Flask App"
 
-export FLASK_APP=6_rendering_a_sign-up_form_and_navbar/app.py
+export FLASK_APP=7_db_sql_alchemy/app.py
 export FLASK_ENV=development
 export FLASK_DEBUG=1
 
