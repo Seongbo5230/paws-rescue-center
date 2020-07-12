@@ -1,0 +1,48 @@
+this one builds on top of one-to-one.txt
+
+many to many in this example is referring to this:
+an employee can work on multiple projects while a project 
+can have multiple employees working on it at the same time
+
+# this is an association table
+# it is meant to create an association between employee and project
+# notice that we passed the name as the first column followed by employee id and project id
+project_members = db.Table('project_members',
+    db.Column('employee_id', db.Integer, db.ForeignKey('employee.employee_id'), primary_key=True),
+    db.Column('project_id', db.Integer, db.ForeignKey('project.project_id'), primary_key=True)
+)
+
+# notice how we created a relationship (called members) in the Project model.
+# this creates a relationship between members and employee model but we used an asoociation table to create it
+# therefore, we set "secondary" param equal to the project_members table...
+# backref is created here to that we can access project from the Employee table
+# this is so that employee.projects will give us all the projects that this employee is working on
+class Project(db.Model):
+  project_id = db.Column(db.Integer, primary_key=True, nullable=False)
+  name = db.Column(db.String(100), nullable=False)
+  members = db.relationship('Employee', secondary=project_members, backref='projects')
+
+---------- Final set of models ----------
+
+class Employee(db.Model):
+    employee_id = db.Column(db.Integer, primary_key = True)
+    first_name = db.Column(db.String(50), nullable = False)
+    last_name = db.Column(db.String(50), nullable = False)
+    department_name = db.Column(db.String, db.ForeignKey('department.name'), nullable = False)
+    is_head_of = db.Column(db.String, db.ForeignKey('department.name'), nullable=True)
+        
+class Department(db.Model):
+    name = db.Column(db.String(50), primary_key=True, nullable=False)
+    location = db.Column(db.String(120), nullable=False)
+    employees = db.relationship('Employee', backref='department')
+    head = db.relationship('Employee', backref='head_of_department', uselist=False)
+    
+class Project(db.Model):
+    project_id = db.Column(db.Integer, primary_key=True, nullable=False)
+    name = db.Column(db.String(100), nullable=False) 
+    members = db.relationship('Employee', secondary=project_members, backref='projects')
+
+project_members = db.Table('project_members',
+    db.Column('employee_id', db.Integer, db.ForeignKey('employee.employee_id'), primary_key=True),
+    db.Column('project_id', db.Integer, db.ForeignKey('project.project_id'), primary_key=True)
+)
