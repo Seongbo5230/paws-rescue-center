@@ -29,3 +29,20 @@ flask run
 {# ... #} is used for comments.
 # ... ## is used for line statements.
 ```
+
+# Things to implement later:
+Flask Cache: For cache management in a Flask application.
+
+Flask Migrate: Handles the SQLAlchemy database migrations for Flask applications using Alembic.
+
+pyscopg: To integrate PostgreSQL with your application.
+
+Flask-RESTful: Used for building REST APIs with Flask.
+
+Flask-mail: Provides support to set up SMTP with your Flask application.
+
+Flask-Login: Provides an extension to efficiently manage user sessions, login, and logout.
+
+Gunicorn: A WSGI (HTTP) web server that can be used to deploy Flask applications.
+
+Nginx: Handles requests from the client in the deployment environment.
